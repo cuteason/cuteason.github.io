@@ -1,0 +1,34 @@
+#site settings
+title: sijh的博客 
+description: 记录学习和生活过程中的点滴，只关心收获，不计较得失。关注技术，热爱生活。
+keywords: 编程,算法,技术,学习,生活,阅读,方法,面试,博客,Java,Hibernate,Algorithm,Technology,IT,Education,Learn,Study,School,Class,Object,Programming,Code,Coding,Life,Oracle,MySQL,Jekyll,CSS,JavaScript,jQuery,HTML,Linux,Windows,database,Markdown,interview
+motto: 见贤思齐。
+footer_word:  只能永远把艰辛的劳动看作是生命的必要；即使没有收获的指望，也心平气和地继续耕种。
+github_username:  sijh
+url: http://sijh.github.io
+paginate: 7
+paginate_path: "page/:num"
+timezone: 'Asia/Shanghai'
+
+# build settings
+markdown: kramdown
+
+highlighter: rouge
+permalink: /:year/:month/:day/:title
+
+#duoshuo comment
+comments:
+  provider: duoshuo
+  duoshuo: 
+    short_name: shitjh
+
+kramdown:
+  input             : GFM
+  syntax_highlighter: rouge
+  auto_ids          : true
+  use_coderay       : true
+
+  coderay:
+  coderay_line_numbers:      inline
+  coderay_line_number_start: 1
+  coderay_tab_width:         4

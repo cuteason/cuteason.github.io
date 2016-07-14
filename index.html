@@ -1,0 +1,72 @@
+---
+layout: default
+tagname: Tags
+---
+<div class="home">
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <div class="bookmark"></div>
+        <div class="blog-abstract">
+          <span class="post-meta"><i class="icon-calendar icon-90p"></i>&nbsp;{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+          {{ post.excerpt }}
+          <div>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+              <button class="read-more">
+                阅读全文<i class="icon-double-angle-right"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  
+  <!-- 标签 -->
+  <div class="tag-list">
+    <h2>{{ page.tagname }}</h2>
+    <ul>
+      {% for tag in site.tags %}
+      <li>
+        <a href="/tags/#{{ tag[0] }}"> <i class="icon-tag icon-90p"></i>&nbsp;{{ tag[0] }}&nbsp;({{ tag[1].size }})</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% if paginator.total_pages > 1 %}
+  <!-- 分页代码 -->
+  <ul class="page-nav">
+    {% if paginator.previous_page %}
+      <li>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">上一页</a>
+      </li>
+    {% endif %}
+    
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <li class="active">
+          <a href="javascript:void(0);">{{ page }}</a>
+        </li>
+      {% elsif page == 1 %}
+        <li>
+          <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ site.paginate_path | prepend: '/' | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    
+    {% if paginator.next_page %}
+      <li>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}
