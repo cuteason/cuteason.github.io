@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MySQL中汉字的存储长度的问题
-date: 2017-2-16 20:59:48
+date: 2017-02-16 20:59:48
 location: 北京
 category: tech
 tags: [mysql, character]
@@ -40,7 +40,7 @@ SELECT username, LENGTH(username), CHAR_LENGTH(username) from t_user order by id
 
 所以应该是MySQL中的varchar(10)的10个长度，是根据`CHAR_LENGTH`这个函数计算出来的，而不是字符实际的长度。
 
-##结论
+## 结论
 
 - varchar(n)能存储n个中文或者n个英文字符
 - 实际的字符长度，utf8下一个汉字是3个字节，而gbk下是2个字节
