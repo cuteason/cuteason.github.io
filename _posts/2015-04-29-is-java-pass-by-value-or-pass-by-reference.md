@@ -7,6 +7,7 @@ category: tech
 tags: [java]
 ---
 这几天在看《JAVA核心技术(卷1):基础知识(原书第8版)》（[豆瓣链接](http://book.douban.com/subject/3146174/)），看到书中关于Java方法参数的讲解：
+
 > Java程序设计语言总是采用值调用。也就是说，方法得到的是所有参数值的一个拷贝，特别是，方法不能修改传递给它的任何参数变量的内容。
 
 这让我想起来之前看到的Stack Overflow上关于这个问题的一个讨论：[Is Java “pass-by-reference” or “pass-by-value”?](http://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value)，这个问题本身就有1985个赞，下面有53条回复，得票率最高的回答得到了1821个赞。这个问题讨论的激烈程度可见一斑。
