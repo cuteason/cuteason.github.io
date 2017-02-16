@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MySQL中汉字的存储长度的问题
-date: 2017-02-16 20:59:48
+date: 2017-02-16 20:59
 location: 北京
 category: tech
 tags: [mysql, character]
